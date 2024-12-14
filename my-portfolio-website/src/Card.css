@@ -1,0 +1,282 @@
+/* Card.css */
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 470px;
+  overflow: hidden;
+}
+
+.card-image {
+  max-width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: opacity 0.3s ease-in;
+}
+.card-image:hover{
+opacity: 0.8;
+cursor: pointer;
+}
+/* .card-text {
+} */
+
+.card-title {
+font-size: 1.25rem;
+  font-style: normal;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0px;
+  text-transform: none;
+  width: 900px;
+}
+
+.card-description {
+font-size: 1.125rem;
+  font-style: normal;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+  text-transform: none;
+  color: #555;
+  text-align: left;
+}
+
+.card-link {
+font-size: 1.125rem;
+  font-style: normal;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0px;
+  text-transform: none;
+  color: #343434;
+  text-decoration: underline;
+}
+.card-link:hover{
+  cursor: pointer;
+  color: #8b8b8b;
+}
+
+/* Showcase.css */
+.showcase {
+  text-align: left;
+  margin-top: 100px;
+}
+.showcase .pp{
+  font-size: 0.875rem;
+    font-style: normal;
+    font-family: Poppins;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #32aa27;
+
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 0 20px;
+    
+}
+.showcase-title {
+font-size: 2rem;
+  font-style: normal;
+  font-family: Poppins;
+  font-weight: 600;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+    
+}
+@media(max-width:767px){
+.showcase-title{
+  font-size: 1.4rem;
+}
+.card-description {
+  font-size: 1rem;
+}
+}
+@media(max-width:567px){
+.showcase-title{
+  font-size: 1.2rem;
+}
+}
+.showcase-title span{
+  width: 400px;
+}
+
+
+.card-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+@media(max-width:767px) {
+  .card{
+    width: 90%;
+    margin: 0 30px;
+  }
+  .card-container{
+    display: grid;
+
+}
+.card-image {
+  width: 100%;
+  max-height: 500px;
+}
+
+}
+
+
+
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 16px;
+    opacity: 0;
+      visibility: hidden;
+      transition: opacity 1s ease, visibility 0s 1s;
+}
+.modal-overlay.show {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s ease;
+}
+.modal-content {
+  background-color: #f4f8f4;
+  /* padding: 32px; */
+    margin: 0 auto;
+      padding: 20px 20px;
+  width: 80%;
+  max-width: 1200px;
+  height: 85%;
+  max-height: 1200px;
+  position: relative;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  display: flex;
+  gap: 10%;
+
+  font-size: 1.125rem;
+    font-style: normal;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0px;
+    text-transform: none;
+    color: #595959;
+
+      transform: scale(0.8);
+        opacity: 0;
+        transition: transform 3s ease, opacity 3s ease;
+
+  }
+
+    .modal-overlay.show .modal-content {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+
+.imagediv{
+  flex: 1;
+}
+.titlediv{
+  flex: 1;
+}
+.modal-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: #ff0000;
+}
+
+.modal-content h2 {
+  font-size: 1.25rem;
+    font-style: normal;
+    font-family: Poppins;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: 0px;
+    text-transform: none;
+    color: #595959;
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+font-size: 1.125rem;
+  font-style: normal;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+  text-transform: none;
+  color: #595959;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+/* For the pagination within the modal (if needed) */
+.modal-content .pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.modal-content .pagination span {
+  font-size: 1rem;
+  color: #555;
+  cursor: pointer;
+}
+
+.modal-content .pagination span:hover {
+  color: #007bff;
+}
+@media(max-width:1100px) {
+
+  .modal-content p {
+    font-size: 0.95rem;
+
+  }
+
+}
+@media(max-width:800px){
+.modal-content{
+  display: grid;
+  width: 90%;
+}
+.modal-content h2{
+}
+.modal-content p{
+  font-size: 1rem;
+
+}
+.modal-content img{
+  display: none;
+}
+}

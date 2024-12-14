@@ -5,10 +5,17 @@ header{
   align-items: center;
   top: 0;
   left: 0;
+  right: 0;
+  height: 10vh;
   position: fixed;
   width: 100%;
   z-index: 1;
   background-color: white;
+  padding: 35px 16px;
+  box-sizing: border-box;
+  margin: 0;
+  overflow-x: hidden;
+
 }
 
 .Name{
@@ -32,14 +39,27 @@ ul{
   list-style-type: none;
 }
 ul li a{
-  text-decoration: none;
+  /* text-decoration: none; */
   color: rgb(108, 108, 108);
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
   transition: all 0.2s ease-out;
-  padding-bottom: 18px;
-  font-size: 0.9rem;
-    letter-spacing: 0.1rem;
-      transform: scale(1, 1.9);
+  /* padding-bottom: 18px; */
+  /* font-size: 0.9rem; */
+    /* letter-spacing: 0.1rem; */
+      /* transform: scale(1, 1.9); */
+
+      font-size: 0.875rem;
+        font-style: normal;
+        font-family: Poppins;
+        font-weight: 500;
+        line-height: 1.25;
+        letter-spacing: 1px;
+        text-transform: capitalize;
+        text-decoration: none;
+        display: inline-block;
+        margin: 0;
+        padding: 6px 0;
+        vertical-align: middle;
   
 }
 ul li a:hover{
@@ -50,8 +70,8 @@ ul li a:hover{
 }
 .contact-border{
   border: solid rgb(125, 123, 123);
-  padding: 11px 30px;
-  border-radius: 5px;
+  padding: 5px 25px;
+  border-radius: 2px;
   transition: background-color 0.2s ease;
 }
 .contact-border:hover{
@@ -72,8 +92,9 @@ border: solid rgb(16, 202, 16);
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
-    padding-right: 50px;
-    padding-left: 30px;
+    padding: 0;
+    margin: 0 auto;
+    position: relative;
   }
   .hamburger .bar{
     width: 20px;
@@ -104,35 +125,36 @@ border: solid rgb(16, 202, 16);
     gap: 2rem;
   }
   @media (max-width: 1000px) {
+
+      .hamburger {
+          display: flex;
+          gap: 5px;
+          padding: 0;
+          margin: 0;
+        }
     .navs{
       display: none;
-      /* flex-direction: column;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      background-color: #333;
-      width: 100%;
-      padding: 1rem 0; */
+
+    }
+    .sidebar{
+          overflow-x: hidden;
     }
         .sidebar .navs{
           display: flex;
         }
     .Name{
       font-size: 1.3rem;
-      /* letter-spacing: 0.05rem; */
     }
     header{
-      justify-content: space-between;
+      /* justify-content: space-between; */
       padding: 0 30px;
-    /* }
-    .navs .open{
-      display: flex;
-    } */
+
     .hamburger{
       display: flex;
       gap: 3px;
     }
   } }
+  
   @media (max-width: 600px){
     .Name{
       font-size: 1.15rem;

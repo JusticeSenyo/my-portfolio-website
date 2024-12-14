@@ -1,0 +1,35 @@
+footer {
+  background-color: #222;
+  color: #fff;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+footer h4 {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+  color: #32aa27;
+}
+
+footer a {
+  color: #32aa27;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+.footer-socials,
+.footer-contact,
+.footer-copyright {
+  flex: 1 1 300px;
+}

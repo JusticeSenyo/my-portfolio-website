@@ -10,12 +10,13 @@
 }
 
 .form-section {
-  flex: 0.7;
+  flex: 1;
   background-color: #fff;
   padding: 20px;
   border-radius: 3px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin-right: 10px;
+  margin: 0;
 }
 
 .form-section h1 {
@@ -85,6 +86,7 @@ form textarea {
   /* margin-top: 10px; */
   /* border: solid; */
   padding-right: 100px;
+  text-align: left;
 }
 .sbt-button {
   background-color: #4CAF50;
@@ -98,12 +100,6 @@ font-size: 1rem;
   text-transform: uppercase;
   border-radius: 2px;
   border-width: 2px;
-
-  /* display: inline-flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
-    /* text-align: center; */
-    /* vertical-align: middle; */
     transition: all .15s ease-in-out;
     text-decoration: none;
     margin: 0;
@@ -119,19 +115,22 @@ font-size: 1rem;
 }
 
 .info-section {
-  flex: 1;
+  flex: 0.8;
   background-color: #f4f4f4;
   padding: 50px;
+  margin: 0;
   border-radius: 3px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   font-size: 1.125rem;
+  align-items: center;
+  justify-content: center;
     font-style: normal;
+    display: grid;
     font-family: Poppins;
     font-weight: 400;
     line-height: 1.5;
     letter-spacing: 0px;
     text-transform: none;
-    /* border: solid; */
 }
 
 .info-section h2 {
@@ -176,4 +175,10 @@ font-size: 1rem;
     line-height: 1.5;
     letter-spacing: 0px;
     text-transform: none;
+}
+@media(max-width : 768px){
+.container{
+  display: grid;
+  grid-template-columns: 1fr;
+}
 }
