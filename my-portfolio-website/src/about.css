@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: space-evenly;
   padding: 50px 100px;
-  padding: 50px;
+  /* padding: 50px; */
   flex-wrap: nowrap;
 
 height: 80vh;
@@ -77,6 +77,16 @@ color: #595959;
     min-height: 0;
     text-transform: none;
     text-decoration: underline;
+}
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-in-out;
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 @media (max-width: 800px) {
   .about-section {

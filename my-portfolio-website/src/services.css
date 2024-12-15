@@ -53,6 +53,16 @@ font-size: 1rem;
   padding: 0 20px;
 }
 
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-in-out;
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 .service-card {
   background-color: #fff;
   /* border-radius: 8px; */

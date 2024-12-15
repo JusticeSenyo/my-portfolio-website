@@ -1,10 +1,33 @@
+import React, { useState, useEffect, useRef } from 'react';
 import './about.css'
 function About(){
+
+    const [isVisible, setIsVisible] = useState(false);
+  const contentRef = useRef(null);
+
+  useEffect(() => {
+    // Intersection Observer to detect when content comes into view
+    const observer = new IntersectionObserver((entries) => {
+      const [entry] = entries;
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+      }
+    });
+
+    if (contentRef.current) {
+      observer.observe(contentRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return(
 
   <div className='about-section' id='about'>
-    <div className="about">
+      <div
+        className={`about scroll-animate ${isVisible ? 'visible' : ''}`}
+        ref={contentRef}
+      >
       <h4>Crafting Digital Solutions</h4>
        <h1>Innovative, User-Centric Applications</h1>
        <p>

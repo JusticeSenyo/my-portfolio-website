@@ -33,3 +33,13 @@ footer p {
 .footer-copyright {
   flex: 1 1 300px;
 }
+.portfolio-footer {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.portfolio-footer.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

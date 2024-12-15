@@ -1,3 +1,14 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .hero-section {
   background-image: url(assets/train.png);
     background-size: cover;
@@ -9,7 +20,20 @@
   margin: 0;
   display: flex;
   align-items: center;
+
+  animation: fadeIn 1s ease-out;
 }
+.content {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .fakecontent{
   border: transparent;
   width: 400px;
@@ -103,4 +127,8 @@ font-size: 1rem;
     text-align: center;
     vertical-align: middle;
     transition: all .15s ease-in-out;
+}
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }

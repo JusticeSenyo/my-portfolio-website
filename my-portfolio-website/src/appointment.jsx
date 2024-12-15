@@ -1,4 +1,5 @@
 import React, { useState,useRef, useEffect } from 'react';
+import emailjs from 'emailjs-com';
 import { Link } from 'react-router-dom';
 
 import './appointment.css';
@@ -34,10 +35,30 @@ const AppointmentBooking = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log('Appointment Details:', formData);
+  //   setSubmitted(true);
+  // };
+
+    const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Appointment Details:', formData);
-    setSubmitted(true);
+
+    const serviceID = 'service_442k9h6';
+    const templateID = 'template_bydgs67'; 
+    const userID = 'FwzBQxcTK0FzPRcO6'; 
+
+    // Send form data to EmailJS
+    emailjs
+      .send(serviceID, templateID, formData, userID)
+      .then((response) => {
+        console.log('Email sent successfully!', response.status, response.text);
+        setSubmitted(true);
+      })
+      .catch((error) => {
+        console.error('Error sending email:', error);
+        alert('Failed to send the email. Please try again.');
+      });
   };
 
    const handleReset = () => {

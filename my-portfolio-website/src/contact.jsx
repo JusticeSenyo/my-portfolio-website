@@ -1,8 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import emailjs from 'emailjs-com';
+
 import './contact.css';
 
 function Contact()  {
+  const contactRef = useRef(null);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0 }); // Trigger when 50% of the element is in view
+
+    if (contactRef.current) {
+      observer.observe(contactRef.current);
+    }
+
+    // Cleanup on component unmount
+    return () => {
+      if (contactRef.current) {
+        observer.unobserve(contactRef.current);
+      }
+    };
+  }, []);
   const styles={
     color : "red"
   }
@@ -38,13 +62,35 @@ function Contact()  {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission logic here
-  };
+  e.preventDefault();
+
+  emailjs.sendForm(
+    'service_442k9h6',       // Replace with your EmailJS Service ID
+    'template_zccapec',      // Replace with your EmailJS Template ID
+    e.target,                // Form reference
+    'FwzBQxcTK0FzPRcO6'        // Replace with your EmailJS Public Key
+  )
+  .then((result) => {
+    console.log('Success:', result.text);
+    alert('Message sent successfully!');
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      message: '',
+      consent: false,
+    });
+  })
+  .catch((error) => {
+    console.log('Error:', error.text);
+    alert('Failed to send message. please try again.');
+  });
+};
+
+
 
   return (
-    <div className="container" id='contact'>
+    <div className="container" id='contact' ref={contactRef}>
       <div className="form-section">
         <h1>Let's discuss your project!</h1>
         <form onSubmit={handleSubmit}>

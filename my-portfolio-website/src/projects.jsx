@@ -1,23 +1,56 @@
 // import React, {useState} from 'react';
 import './hero.css';
 import Card from './Pcard'
+import React, {useState, useEffect, useRef } from "react";
+
 import ecommerceImage from './assets/backgroundimage.jpg'
 import portfolioImage from './assets/train.png'
 function Projects(){
 
 
-  // const [showModal, setShowModal] = useState(false); 
-  // const [modalContent, setModalContent] = useState({});
+   const contentRef = useRef(null); // Reference for the content to animate on scroll
 
+  useEffect(() => {
+    // Scroll Animation Logic
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible"); // Add visible class when in view
+          }
+        });
+      },
+      { threshold: 0.2 } // Trigger when 30% of the element is visible
+    );
 
-  //   const openModal = (content) => {
-  //   setModalContent(content);
-  //   setShowModal(true);
-  // };
+    if (contentRef.current) {
+      observer.observe(contentRef.current);
+    }
 
-  //   const closeModal = () => {
-  //   setShowModal(false); 
-  // };
+    return () => {
+      if (contentRef.current) {
+        observer.unobserve(contentRef.current);
+      }
+    };
+  }, []);
+    const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    // Intersection Observer to detect when content comes into view
+    const observer = new IntersectionObserver((entries) => {
+      const [entry] = entries;
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+      }
+    });
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
   const link = {
     color: "white"
   }
@@ -27,7 +60,7 @@ function Projects(){
 
     
   <div className='hero-section' id='home'>
-    <div className="content">
+    <div className="content" ref={contentRef}>
     <h1 className='name'>innovative development</h1>
     <p className='p'>crafting user-centric applications</p>
     </div>
@@ -36,12 +69,12 @@ function Projects(){
     </div>
     </div>
 
-    <div className="showcase">
+    <div className="showcase" ref={sectionRef}>
       <p className='pp'>innovative projects</p>
       <h2 className="showcase-title"> 
         Showcasing my development skills 
       </h2>
-      <div className="card-container">
+        <div className={`card-container scroll-animate ${isVisible ? 'visible' : ''}`}>
         <Card
           image={ecommerceImage}
           title="E-Commerce platform"

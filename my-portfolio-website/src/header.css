@@ -1,4 +1,14 @@
+@keyframes fadeInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
 
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 header{
   display: flex;
   justify-content: space-around;
@@ -14,7 +24,10 @@ header{
   padding: 35px 16px;
   box-sizing: border-box;
   margin: 0;
-  overflow-x: hidden;
+  overflow: hidden;
+
+    animation: fadeInFromTop 0.8s ease-in-out;
+      opacity: 1;
 
 }
 

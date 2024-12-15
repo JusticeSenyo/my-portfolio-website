@@ -1,4 +1,15 @@
 .container {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.container {
   display: flex;
   justify-content: space-between;
   margin: 50px auto;
