@@ -20,7 +20,7 @@
 import React, { useState } from "react";
 import "./Card.css";
 
-const Card = ({ image, title, description, modalTitle, modalContent, modalImage }) => {
+const Card = ({ image, title, description, modalTitle, modalContent, modalImage , link}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Function to open the modal
@@ -38,7 +38,16 @@ const Card = ({ image, title, description, modalTitle, modalContent, modalImage 
       <img src={image} alt={title} className="card-image" onClick={openModal}/>
       <div className="card-text">
         <h3 className="card-title">{title}</h3>
+                  <a 
+          className = "card-link"
+          href={link} 
+          target="_blank" 
+          // rel="noopener noreferrer" 
+        >
+          Visit Site
+        </a>
         <p className="card-description">{description}</p>
+
         {/* <button onClick={openModal} className="card-link">
           Learn more
         </button> */}

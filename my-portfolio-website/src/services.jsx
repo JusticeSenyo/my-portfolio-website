@@ -39,7 +39,7 @@ return(
   <div className={`service-card scroll-animate ${isVisible ? 'visible' : ''}`}>
       <img className='service-image' src="src\assets\fotis-fotopoulos-DuHKoV44prg-unsplash.jpg" alt="" />
       <div className="service-content">
-      <h4 >Web applicaion development &gt;</h4>
+      <h4 >Frontend Development &gt;</h4>
       <p >
         Create engaging and interactive web applications tailored to your needs.
       </p>
@@ -50,9 +50,9 @@ return(
       <div className={`service-card scroll-animate ${isVisible ? 'visible' : ''}`}>
       <img className='service-image' src="src\assets\fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg" alt="" />
       <div className="service-content">
-      <h4 >UI/UX design &gt;</h4>
+      <h4 >FullStack Development &gt;</h4>
       <p >
-       Design visually appealing and user-friendly interfaces.
+       Building dynamic, scalable web applications with full-stack expertise.
       </p>
       </div>
     </div>
@@ -63,7 +63,7 @@ return(
       <div className="service-content">
       <h4 >Backend development &gt;</h4>
       <p>
-       Build robust and efficient server-side applications.
+       Build robust and efficient server-side applications with backend expertise.
       </p>
       </div>
     </div>

@@ -8,10 +8,8 @@ function Backend() {
     <main>
     <div className="web-development-section">
       <div className="image">
-        <img
-          src="/src/assets/train.png"
-          alt="Web Development"
-        />
+      <img className='service-image' src="src\assets\backend-utvikling-toaarig-2024.jpg" alt="" />
+        
       </div>
       <div className="Content">
         <h3>Backend development</h3>

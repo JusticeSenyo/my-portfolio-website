@@ -76,10 +76,13 @@ function Header() {
             <Link to="/" onClick={toggleMenu}>Home</Link> {/* Home route */}
           </li>
           <li>
-            <Link to="/about" onClick={toggleMenu}>About</Link> {/* About route */}
+            <Link to="/#about" onClick={toggleMenu}>About</Link> {/* About route */}
           </li>
           <li>
-            <Link to="/services" onClick={toggleMenu}>Services</Link> {/* Services route */}
+            <Link to="/#skills" onClick={toggleMenu}>Skills</Link> {/* About route */}
+          </li>
+          <li>
+            <Link to="/#services" onClick={toggleMenu}>Services</Link> {/* Services route */}
           </li>
           <li>
             <Link to="/projects" onClick={toggleMenu}>Projects</Link> {/* Projects route */}
@@ -105,6 +108,10 @@ function Header() {
           <Link to="/#about">About</Link>
           {/* <a href="#about">About</a> */}
         </li>
+
+        <li>
+          <Link to="/#skills">Skills</Link>
+       </li>
 
         <li>
           <Link to="/#services">Services</Link>

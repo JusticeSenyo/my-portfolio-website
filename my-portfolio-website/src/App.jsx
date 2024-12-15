@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Header from './header';
 import Hero from './hero';
 import About from './about';
+import Skills from "./Skills";
 import Services from './services'
 import Contact from './contact'
 import Projects from './projects'
@@ -25,6 +26,7 @@ function App() {
       <Route path="/" element={<>
         <Hero/>
         <About/>
+        <Skills/>
         <Services/>
         <Contact/>
       </>}/>

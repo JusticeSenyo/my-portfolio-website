@@ -1,10 +1,10 @@
 // import React, {useState} from 'react';
-import './hero.css';
+import './project.css';
 import Card from './Pcard'
 import React, {useState, useEffect, useRef } from "react";
 
-import ecommerceImage from './assets/backgroundimage.jpg'
-import portfolioImage from './assets/train.png'
+import ecommerceImage from './assets/moviebuzzfeed.jpg'
+import portfolioImage from './assets/personal.avif'
 function Projects(){
 
 
@@ -55,11 +55,16 @@ function Projects(){
     color: "white"
   }
 
+const back = {
+  backgroundImage: "url('./assets/backgroundimage.jpg')",
+};
+
+
   return(
     <div>
 
     
-  <div className='hero-section' id='home'>
+  <div className='project-section' id='home' >
     <div className="content" ref={contentRef}>
     <h1 className='name'>innovative development</h1>
     <p className='p'>crafting user-centric applications</p>
@@ -77,12 +82,12 @@ function Projects(){
         <div className={`card-container scroll-animate ${isVisible ? 'visible' : ''}`}>
         <Card
           image={ecommerceImage}
-          title="E-Commerce platform"
-          description="Explore a dynamic e-commerce platform built for seamless shopping experiences."
-          modalTitle="E-Commerce platform"
-          modalContent="This project showcases a full-fledged e-commerce platform designed with both user experience and functionality in mind. It features a responsive layout that adapts seamlessly across devices, ensuring that customers can shop effortlessly from anywhere. The platform includes advanced filtering options, a secure checkout process, and real-time inventory management. With a vibrant design and smooth animations, users are guided through every step of their shopping journey. This application emphasizes speed and reliability, making it a go-to solution for online retailers looking to enhance their digital presence.."
+          title="Movie Feed website"
+          description="Discover a powerful movie search platform offering comprehensive details on your favorite movies."
+          modalTitle="Movie Feed website"
+          modalContent="Movie buzzfeed is a dynamic and user-friendly movie database designed for film enthusiasts. It allows users to explore a vast collection of movies, offering detailed insights like cast members, plot summaries, high-quality images, production budgets, box office earnings, and release dates. The website ensures real-time updates, delivering accurate and comprehensive information at your fingertips. Whether you’re researching your favorite classics or discovering new blockbusters, MVU provides all the information you need in a sleek, easy-to-navigate interface. Perfect for anyone who loves the magic of cinema!"
           modalImage={ecommerceImage}
-          link="#"
+          link="https://moviebuzzfeed.vercel.app/"
           />
         <Card
           image={portfolioImage}

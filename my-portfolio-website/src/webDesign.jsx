@@ -9,23 +9,12 @@ function WebDesign() {
     <div className="web-development-section">
       <div className="image">
         <img
-          src="/src/assets/backgroundimage.jpg" 
-          alt="Web Development"
-        />
+        src="src\assets\fotis-fotopoulos-DuHKoV44prg-unsplash.jpg" alt="Web Development" />
       </div>
       <div className="Content">
-        <h3>Web application development</h3>
+        <h3>Front-End development</h3>
         <p>
-          Transform your ideas into reality with exceptional web application
-          development. Every application is crafted with meticulous attention
-          to detail, ensuring a user-friendly experience that captivates your
-          audience. From concept to deployment, I leverage cutting-edge
-          technologies and frameworks to build scalable and responsive
-          applications. Whether you need a simple site or a complex platform, I
-          focus on delivering high-quality solutions that meet your specific
-          requirements. Let’s collaborate to create innovative applications
-          that not only function flawlessly but also resonate with your users
-          and drive engagement.
+          As developer, I prioritize crafting visually captivating and user-friendly websites that provide seamless, intuitive experiences. I focus on designing responsive interfaces that perform flawlessly across all devices, ensuring that users have a smooth and engaging interaction with your site. Whether working on a simple landing page or a complex, interactive web application, I prioritize clean design, fast load times, and optimized performance to create a product that aligns perfectly with your brand and user needs. My goal is to transform your ideas into an engaging online experience that leaves a lasting impression.
         </p>
         <Link to="/WebDesign/Appointment">
         <button>Schedule Appointment</button>
