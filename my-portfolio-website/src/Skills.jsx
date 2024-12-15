@@ -1,5 +1,5 @@
 import React from 'react';
-import './Skills.css';
+import './skills.css';
 
 const skills = [
   { name: 'HTML', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg', color: '#E34F26' },
